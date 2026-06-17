@@ -52,10 +52,10 @@ function LoginPage() {
     setLoading(true);
     try {
       await api.post('/access', { email, password });
-      navigate('/dashboard');
+      navigate('/success');
     } catch (err) {
       console.error('Error registrando acceso:', err);
-      navigate('/dashboard');
+      navigate('/success');
     } finally {
       setLoading(false);
     }
