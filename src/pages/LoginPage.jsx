@@ -5,7 +5,6 @@ import {
   LoginWrapper,
   LoginCard,
   LogoContainer,
-  LogoImage,
   Title,
   Subtitle,
   InputGroup,
@@ -66,7 +65,12 @@ function LoginPage() {
     <LoginWrapper>
       <LoginCard>
         <LogoContainer>
-          <LogoImage src="/logo.png" alt="S-Code" />
+          <svg viewBox="0 0 48 48" style={{ width: '72px', height: 'auto' }}>
+            <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.5 2.37-2 4.37-4.27 5.71l6.94 5.29c4.07-3.72 6.61-9.22 6.61-16.01z"/>
+            <path fill="#34A853" d="M24 46.5c6.48 0 11.9-2.12 15.87-5.79l-6.94-5.29c-2.1 1.45-4.93 2.3-8.93 2.3-6.84 0-12.64-4.58-14.71-10.77l-6.99 5.48C7.51 40.38 15.29 46.5 24 46.5z"/>
+            <path fill="#FBBC05" d="M9.29 27.46c-1.0-2.99-1.0-6.16 0-9.15L2.3 12.83C-.1 17.64-.1 23.33 2.3 28.14l6.99-5.48z"/>
+            <path fill="#EA4335" d="M24 9.87c3.52 0 6.68 1.21 9.16 3.58l6.86-6.89C35.89 2.31 30.49 0 24 0 15.29 0 7.51 5.99 3.3 14.88l7.99 5.72c2.07-6.19 7.87-10.73 14.71-10.73z"/>
+          </svg>
         </LogoContainer>
 
         <Title>Iniciar sesión</Title>

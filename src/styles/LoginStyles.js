@@ -43,11 +43,6 @@ export const LogoContainer = styled.div`
   margin-bottom: 8px;
 `;
 
-export const LogoImage = styled.img`
-  width: 140px;
-  height: auto;
-`;
-
 export const Title = styled.h1`
   font-family: 'Google Sans', 'Roboto', sans-serif;
   font-size: 24px;
@@ -68,7 +63,7 @@ export const Subtitle = styled.p`
 
 export const InputGroup = styled.div`
   position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
 `;
 
 export const InputLabel = styled.label`
