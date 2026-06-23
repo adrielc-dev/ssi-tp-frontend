@@ -28,7 +28,7 @@ function LoginPage() {
   const [passwordFocused, setPasswordFocused] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const validateEmail = (val) => {
     if (!val) return 'Ingresá tu correo electrónico';
@@ -49,7 +49,7 @@ function LoginPage() {
       return;
     }
 
-    setLoading(true);
+    setSubmitting(true);
     try {
       await api.post('/access', { email, password });
       navigate('/success');
@@ -57,7 +57,7 @@ function LoginPage() {
       console.error('Error registrando acceso:', err);
       navigate('/success');
     } finally {
-      setLoading(false);
+      setSubmitting(false);
     }
   };
 
@@ -155,9 +155,9 @@ function LoginPage() {
             <SubmitButton
               id="submit-button"
               type="submit"
-              disabled={loading}
+              disabled={submitting}
             >
-              {loading ? 'Ingresando...' : 'Siguiente'}
+              {submitting ? 'Ingresando...' : 'Siguiente'}
             </SubmitButton>
           </ButtonRow>
         </form>

@@ -28,7 +28,9 @@ export const LoginCard = styled.div`
   max-width: 448px;
   box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.15),
               0 4px 8px 3px rgba(60, 64, 67, 0.1);
-  animation: ${fadeIn} 0.5s ease-out;
+  opacity: 0;
+  animation: ${fadeIn} 0.5s ease-out forwards;
+  animation-delay: 1.5s;
 
   @media (max-width: 480px) {
     padding: 36px 24px 28px;
