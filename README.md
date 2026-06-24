@@ -28,7 +28,7 @@ npm install
 npm run dev
 ```
 
-Por defecto corre en `http://localhost:5173`. En desarrollo, Vite proxyea `/api` hacia `http://localhost:3000` (backend).
+Por defecto corre en `http://localhost:5173`. En desarrollo, Vite proxyea `/api` hacia `http://localhost:3000` (backend). En producción, la variable `VITE_API_URL` debe apuntar a la URL del backend.
 
 ## Build para producción
 
@@ -67,7 +67,7 @@ Muestra:
   - Dominios más utilizados (PieChart)
   - Participaciones por hora (LineChart)
 
-Los datos se refrescan automáticamente cada 15 segundos.
+Los datos se refrescan automáticamente cada 15 segundos. Las horas se muestran en zona horaria Argentina (UTC-3).
 
 ## Estructura del proyecto
 
@@ -108,8 +108,8 @@ src/
    - **Build Command:** `npm install && npm run build`
    - **Publish Directory:** `dist`
 4. En la sección **Environment**, agregá una variable:
-   - `VITE_API_URL`: URL del backend (ej. `https://tu-backend.onrender.com`)
-5. Actualizá `src/api/axios.js` para usar `import.meta.env.VITE_API_URL` como baseURL en producción.
+   - `VITE_API_URL`: URL del backend con `/api` (ej. `https://tu-backend.onrender.com/api`)
+5. Después de cambiar esta variable, ejecutá **Manual Deploy → Clear build cache & deploy** para que se reconstruya con la nueva URL.
 
 > También podés usar **Vercel** (conectando el repo, detecta Vite automáticamente).
 
